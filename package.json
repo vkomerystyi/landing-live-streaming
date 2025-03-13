@@ -4,9 +4,7 @@
     "description": "landing page",
     "source": "index.html",
     "scripts": {
-        "sass:watch": "sass --style=expanded --watch styles:dist",
-        "parcel:watch": "parcel serve --dist-dir public",
-        "parcel:build": "parcel build --dist-dir build --public-url ./"
+        "sass:watch": "sass --style=expanded --watch styles:dist"
     },
     "author": "Vadym Komerystyi",
     "license": "ISC",
