@@ -1,0 +1,138 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+.about-section {
+    padding: 140px 0 0 0;
+
+    .about {
+        margin: 0 auto;
+
+        @include m.d-flex(start, center, nowrap, column, 0, 130px);
+        &__quality {
+            width: 100%;
+            height: 400px;
+            padding: 0 0 0 15px;
+            background: url('../assets/img/notebook.webp') 100% 100% / contain no-repeat;
+
+            &-title {
+                @include m.font(45px, 400, v.$color-white);
+            }
+
+            &-desc {
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 590px;
+                margin-top: 50px;
+            }
+            @media (max-width: v.$media_xl) {
+                background: linear-gradient(180deg, rgba(103, 143, 242, 1) 0%, rgba(103, 143, 242, 0) 74%),
+                    url('../assets/img/notebook.webp') 90% 45% /500px no-repeat;
+            }
+            @media (max-width: v.$media_lg) {
+                &-title {
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 590px;
+                    margin-top: 50px;
+                }
+                background: url('../assets/img/notebook.webp') 90% 100% /400px no-repeat;
+            }
+            @media (max-width: v.$media_md) {
+                &-desc {
+                    max-width: 320px;
+                }
+                background: url('../assets/img/notebook.webp') 145px 100% /350px no-repeat;
+            }
+        }
+        &__touch {
+            width: 100%;
+            height: 500px;
+            padding: 0 15px 0 15px;
+            position: relative;
+            @include m.d-flex(end, end, nowrap, column, 0, 0);
+
+            &::before {
+                content: '';
+                @include m.position(absolute, -1, -1, top, left, 0, -180px);
+                width: 100%;
+                height: 100%;
+                background: url('../assets/img/phone.webp') 0 0 / contain no-repeat;
+                rotate: 15deg;
+            }
+            &-title {
+                @include m.font(45px, 400, v.$color-white);
+            }
+
+            &-desc {
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 480px;
+                margin-top: 50px;
+                text-align: right;
+            }
+            @media (max-width: v.$media_xl) {
+                &::before {
+                    @include m.position(absolute, -1, -1, top, left, -35px, -360px);
+                }
+            }
+            @media (max-width: v.$media_lg) {
+                height: 400px;
+                &::before {
+                    @include m.position(absolute, -1, -1, top, left, -35px, -400px);
+                }
+            }
+            @media (max-width: v.$media_sm) {
+                @include m.d-flex(start, end, nowrap, column, 0, 0);
+                &-title {
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 400px;
+                    margin-top: 50px;
+                }
+                &::before {
+                    @include m.position(absolute, -1, -1, top, left, 50px, -200px);
+                    background: url('../assets/img/phone.webp') 0 0 / contain no-repeat;
+                    rotate: 65deg;
+                }
+            }
+        }
+        &__approach {
+            width: 100%;
+            height: 800px;
+            padding: 100px 15px 0 15px;
+            position: relative;
+            @include m.d-flex(start, start, nowrap, column, 0, 0);
+            background: url('../assets/img/umbrella.webp') 100% 100% / contain no-repeat;
+
+            &-title {
+                @include m.font(45px, 400, v.$color-white);
+                margin-top: 50px;
+            }
+
+            &-desc {
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 730px;
+                margin-top: 50px;
+            }
+            @media (max-width: v.$media_lg) {
+                padding: 0 15px 0 15px;
+                &-title {
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 400px;
+                    margin-top: 50px;
+                }
+            }
+            @media (max-width: v.$media_sm) {
+                background: url('../assets/img/umbrella.webp') 100% 100% / 400px no-repeat;
+            }
+        }
+    }
+}
