@@ -96,3 +96,37 @@
         }
     }
 }
+
+.wave-card {
+    width: 500px;
+    height: 275px;
+    background: url('../assets/wave_card_bg.svg') center/ cover no-repeat;
+    @include m.d-flex(start, start, nowrap, column, 0, 35px);
+
+    &__avatar {
+        border-radius: 50%;
+        margin: 20px 0 0 20px;
+    }
+    &__quote {
+        @include m.font(20px, 400, v.$color-white);
+        width: 400px;
+        margin: 0 45px 0 30px;
+        line-height: 1.4;
+        text-align: justify;
+    }
+    @media (max-width: v.$media_sm) {
+        width: 320px;
+        height: 175px;
+        row-gap: 25px;
+
+        &__avatar {
+            width: 31px;
+            margin: 10px 0 0 10px;
+        }
+        &__quote {
+            @include m.font(13px, 400, v.$color-white);
+            width: 275px;
+            margin: 0 25px 0 15px;
+        }
+    }
+}
