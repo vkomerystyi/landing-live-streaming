@@ -98,5 +98,66 @@
                 }
             }
         }
+        @media (max-width: v.$media_sm) {
+            &__links,
+            .globe,
+            .covid {
+                display: none;
+            }
+        }
+    }
+}
+
+.mobile-navigation {
+    display: none;
+
+    &__burger {
+        @include m.position(absolute, 10, -1, top, right, 10px, 10px);
+
+        &-icon {
+            width: 33px;
+            height: 22px;
+            stroke: v.$color-white;
+            @extend %hover-black-icon;
+        }
+    }
+
+    &__toggler {
+        display: none;
+        &:checked + nav {
+            translate: 0;
+        }
+    }
+    .nav {
+        padding: 100px 70px 0;
+        @include m.position(fixed, 999, 0);
+        background-color: color.adjust(v.$color_black, $alpha: -0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        translate: 100% 0;
+        transition: translate 0.3s ease;
+
+        &__list {
+            @include m.d-flex(start, start, nowrap, column, 0, 20px);
+            &-item {
+                &-link {
+                    @include m.font(36px, 400, v.$color-white);
+                    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+        &__cross {
+            @include m.position(absolute, 10, -1, top, right, 20px, 20px);
+            &-icon {
+                width: 25px;
+                height: 22px;
+                stroke: v.$color-white;
+                @extend %hover-black-icon;
+            }
+        }
+    }
+
+    @media (max-width: v.$media_sm) {
+        display: block;
     }
 }
